@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    
+
+    <script>
+
+
+        function titleCase(str) {
+
+            return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+        }
+
+        function Greet() {
+    
+        var firstName = document.querySelector("#firstname").value;
+        var lastName = document.querySelector("#lastname").value;
+        var result = titleCase(firstName) + " " + titleCase(lastName);
+        document.querySelector("h2").innerText =  "hello " + result;     
+        document.querySelector(".showHide").style.visibility = "visible";
+        }
+
+        function clearAll(){
+
+            document.querySelector("#firstname").value = "";
+            document.querySelector("#lastname").value = "";
+            document.querySelector(".showHide").style.visibility = "hidden";
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <td>
+                <label for="">First Name</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Enter first name" id="firstname">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">last Name</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Enter last name" id="lastname">
+            </td>
+        </tr>
+    </table>
+
+    <button onclick="Greet()">Greet</button>
+    <button onclick="clearAll()">Clear</button>
+
+    <h2 class="showHide"></h2>
+</body>
+</html>
